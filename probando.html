@@ -1,0 +1,58 @@
+ <html>
+<head>
+<script>
+	function EnviarCheckBoxes()
+	{
+		var todo = document.getElementsByName("interfaces");
+		console.log(todo[0].value);
+		var arreglo = [todo[0].value,todo[1].value,todo[2].value];
+		var jsonInterfaces = JSON.stringify(arreglo);
+		console.log(jsonInterfaces);
+		var xhttp = new XMLHttpRequest();
+		
+		xhttp.onreadystatechange = function() {
+    	if (this.readyState == 4 && this.status == 200) 
+		{
+			var respuesta = this.responseText;
+			console.log(respuesta);
+    	}
+  	};
+	xhttp.open("GET", "mainCreateVlan.php?j="+jsonInterfaces, true);
+	xhttp.send();
+		
+	}
+function showUser() {
+	//alert("sirve");
+	var myDiv = document.getElementById("myDiv");          
+    var label = document.createElement('label'); 
+	label.htmlFor = "id"; 
+	label.appendChild(document.createTextNode('Interface: ')); 
+	
+	var x = document.createElement("INPUT");
+	x.setAttribute("type", "checkbox");
+	x.setAttribute("name","interfaces");
+	x.setAttribute("value","nombreN");
+
+	br = document.createElement("br");
+
+	myDiv.appendChild(x);
+	myDiv.appendChild(label);
+	myDiv.appendChild(br);
+	alert("sirve");
+
+}
+</script>
+</head>
+<body>
+
+<button onclick="showUser();"> Click me!!! </button>
+<p id= "demo"> </p>
+
+<button onclick="EnviarCheckBoxes();"> EnviarCheckBoxes </button>
+
+<br>
+<div id="txtHint"><b>Nodos: </b></div>
+
+<div id = "myDiv"></div> 
+</body>
+</html> 
