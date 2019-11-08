@@ -1,0 +1,65 @@
+--------dispositivo 1--------
+enable 
+configuration terminal
+username sebas privilege 15 secret 1197sebas
+hostname R1
+ip domain name r1.com
+crypto key generate rsa modulus 1024
+ip ssh version 2
+line vty 0 4
+login local
+transport input ssh
+end
+
+--------dispositivo 2--------
+enable 
+configuration terminal
+username sebas privilege 15 secret 1197sebas
+hostname R2
+ip domain name r2.com
+crypto key generate rsa modulus 1024
+ip ssh version 2
+line vty 0 4
+login local
+transport input ssh
+end
+
+--------dispositivo 2--------
+enable 
+configuration terminal
+username sebas privilege 15 secret 1197sebas
+hostname R2
+ip domain name r2.com
+crypto key generate rsa modulus 1024
+ip ssh version 2
+line vty 0 4
+login local
+transport input ssh
+end
+
+--------dispositivo 3--------
+enable 
+configuration terminal
+username sebas privilege 15 secret 1197sebas
+hostname R3
+ip domain name r3.com
+crypto key generate rsa modulus 1024
+ip ssh version 2
+line vty 0 4
+login local
+transport input ssh
+end
+
+
+--------dispositivo 4--------
+enable 
+configuration terminal
+username sebas privilege 15 secret 1197sebas
+hostname sw1
+ip domain name sw1.com
+crypto key generate rsa modulus 1024
+ip ssh version 2
+line vty 0 4
+login local
+transport input ssh
+end
